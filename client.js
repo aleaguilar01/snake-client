@@ -10,6 +10,9 @@ const connect = function () {
 
   conn.setEncoding("utf8");
 
+  conn.on("connect", () => {
+    conn.write("Name: Ale");
+  })
   // Event listener for data received from the server
   conn.on("data", (data) => {
     // Logging the data received from the server
