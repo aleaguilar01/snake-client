@@ -1,6 +1,6 @@
 const connect = require("./client.js");
-const moveSnakeUp = require("./inputs.js");
-const setupInput = require("./inputs.js");
+//const moveSnakeUp = require("./input.js");
+const setupInput = require("./input.js");
 
 console.log("Connecting ...");
 
