@@ -1,29 +1,21 @@
 let connection;
 
 
+const movementCommands = {
+  'w': 'up',
+  'a': 'left',
+  's': 'down',
+  'd': 'right'
+};
+
 //Creating a function to send commands to the server
 const handleUserInput = function(key) {
-
-  switch (key) {
-  case '\u0003':
+  if (key === '\u0003') {
     process.exit();
-    break;
+  }
   
-  case 'w':
-    connection.write("Move: up");
-    break;
-  
-  case 's':
-    connection.write("Move: down");
-    break;
-
-  case 'a':
-    connection.write("Move: left");
-    break;
-
-  case 'd':
-    connection.write("Move: right");
-    break;
+  if (movementCommands[key]) {
+    connection.write(`Move: ${movementCommands[key]}`);
   }
 };
 
