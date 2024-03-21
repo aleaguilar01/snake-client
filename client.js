@@ -1,5 +1,5 @@
 const net = require("net");
-const {IP, PORT, NAME} = require("./constants");
+const {IP, PORT, NAME, ENCODING} = require("./constants");
 
 // establishes a connection with the game server
 const connect = function() {
@@ -9,7 +9,7 @@ const connect = function() {
     port: PORT
   });
 
-  conn.setEncoding("utf8");
+  conn.setEncoding(ENCODING);
 
   // Event listener for data received from the server
   conn.on("data", (data) => {
@@ -17,19 +17,9 @@ const connect = function() {
     console.log("Server says: ", data);
   });
 
+  // sending name of the player to the server
   conn.on("connect", () => {
     conn.write(`Name: ${NAME}`);
-    //setInterval(() => conn.write("Move: up"), 1000);
-
-    /*     setTimeout(() => conn.write("Move: up"), 1000);
-
-    setTimeout(() => conn.write("Move: left"), 2000);
-    
-    setTimeout(() => conn.write("Move: left"), 3000);
-    
-    setTimeout(() => conn.write("Move: down"), 4000);
-
-    setTimeout(() => conn.write("Move: right"), 5000); */
   });
 
   return conn;

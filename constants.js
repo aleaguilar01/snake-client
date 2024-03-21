@@ -1,6 +1,7 @@
 const IP = "localhost";
 const PORT = 50541;
 const NAME = "Ale";
+const ENCODING = "utf8";
 const MOVEMENT_COMMANDS = {
   'w': 'up',
   'a': 'left',
@@ -22,6 +23,7 @@ module.exports = {
   IP,
   PORT,
   NAME,
+  ENCODING,
   MOVEMENT_COMMANDS,
   MESSAGE_COMMANDS
 };
