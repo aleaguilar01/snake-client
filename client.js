@@ -8,19 +8,19 @@ const connect = function() {
     port: 50541
   });
 
+  conn.setEncoding("utf8");
+
   // Event listener for data received from the server
   conn.on("data", (data) => {
     // Logging the data received from the server
     console.log("Server says: ", data);
   });
 
-  conn.setEncoding("utf8");
-
   conn.on("connect", () => {
     conn.write("Name: Ale");
     //setInterval(() => conn.write("Move: up"), 1000);
 
-/*     setTimeout(() => conn.write("Move: up"), 1000);
+    /*     setTimeout(() => conn.write("Move: up"), 1000);
 
     setTimeout(() => conn.write("Move: left"), 2000);
     
