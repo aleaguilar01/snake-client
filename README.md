@@ -6,6 +6,8 @@ This is simply a multiplayer take on the genre.
 
 Before you can run this client, you will need to be running the server side which you can download and install from here. 
 
+STRECH: Each client gets notified if anothe snake joins the game, by printing that message into the console. 
+
 ## Final Product
 ![alt text](image.png)
 !["Game initializing"](#)
