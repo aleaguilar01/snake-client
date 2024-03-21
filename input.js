@@ -1,32 +1,18 @@
+const { MOVEMENT_COMMANDS, MESSAGE_COMMANDS } = require("./constants");
+
 let connection;
 
-
-const movementCommands = {
-  'w': 'up',
-  'a': 'left',
-  's': 'down',
-  'd': 'right'
-};
-
-const messageCommands = {
-  "h": "Hi!",
-  "b": "Bye bye!",
-  "f": "Fist-bump!",
-  "g": "Gaaaaah"
-};
 
 //Creating a function to send commands to the server
 const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
-
-  if (movementCommands[key]) {
-    connection.write(`Move: ${movementCommands[key]}`);
+  if (MOVEMENT_COMMANDS[key]) {
+    connection.write(`Move: ${MOVEMENT_COMMANDS[key]}`);
   }
-
-  if (messageCommands[key]) {
-    connection.write(`Say: ${messageCommands[key]}`);
+  if (MESSAGE_COMMANDS[key]) {
+    connection.write(`Say: ${MESSAGE_COMMANDS[key]}`);
   }
 };
 
