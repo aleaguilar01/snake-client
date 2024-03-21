@@ -1,6 +1,6 @@
 const { MOVEMENT_COMMANDS, MESSAGE_COMMANDS, ENCODING } = require("./constants");
 
-//Variable that helps us to pass the connection into the setupInput function. 
+//Variable that helps us to pass the connection into the setupInput function.
 let connection;
 
 //Creating a function to send commands to the server
@@ -12,7 +12,7 @@ const handleUserInput = function(key) {
   if (MOVEMENT_COMMANDS[key]) {
     connection.write(`Move: ${MOVEMENT_COMMANDS[key]}`);
   }
-  
+
   //Message key commands, passed to move the snake. Stablished as an object in the constants.
   if (MESSAGE_COMMANDS[key]) {
     connection.write(`Say: ${MESSAGE_COMMANDS[key]}`);

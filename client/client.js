@@ -20,6 +20,7 @@ const connect = function() {
   // sending name of the player to the server
   conn.on("connect", () => {
     conn.write(`Name: ${NAME}`);
+    conn.write("A new snake has joined the game!");
   });
 
   return conn;
